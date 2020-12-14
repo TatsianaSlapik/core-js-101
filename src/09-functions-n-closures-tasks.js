@@ -23,8 +23,10 @@
  *   getComposition(Math.sin, Math.asin)(x) => Math.sin(Math.asin(x))
  *
  */
-function getComposition(/* f, g */) {
-  throw new Error('Not implemented');
+function getComposition(f, g) {
+  const compose = (x) => f(g(x));
+  return compose;
+  // throw new Error('Not implemented');
 }
 
 
@@ -170,6 +172,9 @@ function partialUsingArguments(/* fn, ...args1 */) {
  *   getId10() => 11
  */
 function getIdGeneratorFunction(/* startFrom */) {
+  /* const val = yield () => startFrom;
+  return val; */
+
   throw new Error('Not implemented');
 }
 
