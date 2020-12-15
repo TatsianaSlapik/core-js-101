@@ -183,8 +183,15 @@ function isInsideCircle(/* circle, point */) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  //  throw new Error('Not implemented');
+  for (let i = 0; i < str.length; i += 1) {
+    const j = str.charAt(i);
+    if (str.indexOf(j) === str.lastIndexOf(j)) {
+      return j;
+    }
+  }
+  return null;
 }
 
 
@@ -428,6 +435,7 @@ function getCommonDirectoryPath(/* pathes */) {
  *
  */
 function getMatrixProduct(/* m1, m2 */) {
+//  return Math.multiply(m1, m2);
   throw new Error('Not implemented');
 }
 

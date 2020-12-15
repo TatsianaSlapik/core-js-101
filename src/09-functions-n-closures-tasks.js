@@ -46,8 +46,11 @@ function getComposition(f, g) {
  *   power05(16) => 4
  *
  */
-function getPowerFunction(/* exponent */) {
-  throw new Error('Not implemented');
+function getPowerFunction(exponent) {
+  return function power(x1) {
+    return x1 ** exponent;
+  };
+  // throw new Error('Not implemented');
 }
 
 
@@ -171,10 +174,19 @@ function partialUsingArguments(/* fn, ...args1 */) {
  *   getId4() => 7
  *   getId10() => 11
  */
-function getIdGeneratorFunction(/* startFrom */) {
-  /* const val = yield () => startFrom;
-  return val; */
+function getIdGeneratorFunction(startFrom) {
+  /* return function* getId() {
+    let index = startFrom;
+    while (index <= startFrom) {
+      yield index += 1;
+    }
+  }; */
 
+  /* let b = 0;
+  return function () {
+    b += 1;
+    return startFrom + b;
+  }; */
   throw new Error('Not implemented');
 }
 
