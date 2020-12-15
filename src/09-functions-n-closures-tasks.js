@@ -175,21 +175,14 @@ function partialUsingArguments(/* fn, ...args1 */) {
  *   getId10() => 11
  */
 function getIdGeneratorFunction(startFrom) {
-  /* return function* getId() {
-    let index = startFrom;
-    while (index <= startFrom) {
-      yield index += 1;
-    }
-  }; */
-
-  /* let b = 0;
-  return function () {
-    b += 1;
-    return startFrom + b;
-  }; */
-  throw new Error('Not implemented');
+  function* idMaker(start) {
+    let index = start;
+    // eslint-disable-next-line no-plusplus
+    while (true) { yield index++; }
+  }
+  const maker = idMaker(startFrom);
+  return () => maker.next().value;
 }
-
 
 module.exports = {
   getComposition,
